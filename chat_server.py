@@ -154,9 +154,40 @@ if __name__ == "__main__":
     threading.Thread(target=accept_connections, args=(server,), daemon=True).start()
 
     while True:
-        cmd = input()
-        if cmd.strip().lower() == 'exit':
+        cmd = input("🛠️ Server> ").strip()
+        if cmd.lower() == 'exit':
             break
+
+        elif cmd.lower() == 'who':
+            print(Fore.LIGHTYELLOW_EX + "👥 Online Users:")
+            for nick in clients:
+                ip, join_time = join_info.get(nick, ("Unknown", "Unknown"))
+                print(f" - {nick} (IP: {ip}, Joined: {join_time})")
+
+        elif cmd.lower().startswith('kick '):
+            parts = cmd.split(" ", 1)
+            if len(parts) == 2:
+                target = parts[1].strip()
+                conn = clients.get(target)
+                if conn:
+                    try:
+                        conn.sendall("🚫 You were kicked from the server.\n".encode())
+                        conn.close()
+                        print(Fore.RED + f"✅ Kicked {target}")
+                        logging.info(f"Admin kicked {target}")
+                    except:
+                        print(Fore.RED + f"❌ Failed to kick {target}")
+                else:
+                    print(Fore.RED + f"❌ User '{target}' not found.")
+
+        elif cmd.lower().startswith("msg "):
+            msg = cmd[4:]
+            server_msg = f"📢 [Server @ {timestamp()}] {msg}"
+            print(Fore.LIGHTMAGENTA_EX + server_msg)
+            broadcast(Fore.LIGHTMAGENTA_EX + server_msg)
+
+        else:
+            print(Fore.RED + "❓ Unknown command. Use: who | kick <user> | msg <text> | exit")
 
     print(Fore.RED + "🛑 Shutting down server...")
     logging.info("Server shutting down.")
