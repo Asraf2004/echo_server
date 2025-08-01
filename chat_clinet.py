@@ -2,32 +2,35 @@ import socket
 import threading
 from colorama import init, Fore
 from datetime import datetime
+import argparse
 
 init(autoreset=True)
-
-nickname = input(Fore.BLUE + "✨ Enter your nickname: " + Fore.RESET) or "Guest"
 
 def timestamp():
     return datetime.now().strftime('%H:%M:%S')
 
 def receive_messages(sock):
+    reader = sock.makefile('r')
     while True:
         try:
-            msg = sock.recv(1024).decode().strip()
+            msg = reader.readline().strip()
             if not msg:
                 break
             if msg.lower() == 'quit':
-                print(Fore.RED + f"🛑 [{timestamp()}] Server disconnected")
+                print(Fore.RED + f"🛑 [{timestamp()}] Server ended the chat.")
                 break
-            print(Fore.YELLOW + f"🖥️ Server ➤ " + Fore.RESET + msg)
-        except ConnectionResetError:
-            print(Fore.RED + f"💥 [{timestamp()}] Server disconnected unexpectedly")
+            print(Fore.YELLOW + f"[{timestamp()}] Server ➤ {msg}")
+        except Exception as e:
+            print(Fore.RED + f"💥 Error: {e}")
             break
 
-def start_client():
+def start_client(host, port):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect(('localhost', 5000))
-    print(Fore.GREEN + f"✅ [{timestamp()}] Connected to server")
+    sock.connect((host, port))
+    print(Fore.GREEN + f"✅ [{timestamp()}] Connected to server at {host}:{port}")
+
+    nickname = input(Fore.BLUE + "✨ Enter your nickname: " + Fore.RESET).strip() or "Guest"
+    sock.sendall(f"NICK:{nickname}\n".encode())
 
     thread = threading.Thread(target=receive_messages, args=(sock,))
     thread.start()
@@ -35,12 +38,19 @@ def start_client():
     try:
         while True:
             msg = input(Fore.MAGENTA + f"👤 You ({nickname}) ➤ " + Fore.RESET)
-            sock.sendall((msg + '\n').encode())
-            if msg.lower() == 'quit':
+            if msg.strip().lower() == 'quit':
+                sock.sendall('quit\n'.encode())
                 break
+            sock.sendall((msg + '\n').encode())
+    except KeyboardInterrupt:
+        print(Fore.RED + "\n🛑 Interrupted by user")
     finally:
         sock.close()
-        print(Fore.RED + f"🔴 [{timestamp()}] Disconnected")
+        print(Fore.RED + f"🔴 [{timestamp()}] Disconnected from server")
 
 if __name__ == "__main__":
-    start_client()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--host", default="localhost")
+    parser.add_argument("--port", type=int, default=5000)
+    args = parser.parse_args()
+    start_client(args.host, args.port)
