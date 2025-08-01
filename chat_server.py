@@ -14,7 +14,7 @@ logging.basicConfig(filename='chat.log', level=logging.INFO,
 # Global server data
 clients = {}  # nickname -> conn
 addresses = {}  # conn -> nickname
-colors = [Fore.BLUE, Fore.GREEN, Fore.CYAN, Fore.MAGENTA, Fore.YELLOW, Fore.RED]
+colors = [Fore.BLUE, Fore.GREEN, Fore.CYAN, Fore.MAGENTA, Fore.YELLOW, Fore.RED, Fore.ORANGE, Fore.WHITE]
 
 def get_color(nick):
     return colors[hash(nick) % len(colors)]

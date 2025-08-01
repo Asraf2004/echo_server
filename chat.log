@@ -39,3 +39,73 @@
 2025-08-01 21:58:48,751 - INFO - asvat: aoram enna panreee
 2025-08-01 21:58:51,923 - INFO - asvat: nalla erukya
 2025-08-01 21:59:10,312 - INFO - asvat: user
+2025-08-01 22:07:30,287 - INFO - asraf: qut
+2025-08-01 22:07:32,051 - INFO - asraf: qit
+2025-08-01 22:07:33,935 - INFO - asraf: quit
+2025-08-01 22:07:38,303 - INFO - asraf: clear
+2025-08-01 22:07:39,048 - ERROR - Error with ('127.0.0.1', 55872): [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-08-01 22:07:39,049 - INFO - \U0001f465 Users Online: aswin, asvat
+2025-08-01 22:07:39,050 - INFO - Connection with ('127.0.0.1', 55872) closed.
+2025-08-01 22:07:41,103 - ERROR - Error with ('127.0.0.1', 55970): [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-08-01 22:07:41,104 - INFO - \U0001f465 Users Online: asvat
+2025-08-01 22:07:41,105 - INFO - Connection with ('127.0.0.1', 55970) closed.
+2025-08-01 22:07:42,323 - ERROR - Error with ('127.0.0.1', 56081): [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-08-01 22:07:42,324 - INFO - \U0001f465 Users Online: 
+2025-08-01 22:07:42,324 - INFO - Connection with ('127.0.0.1', 56081) closed.
+2025-08-01 22:09:51,645 - asvat
+: hello
+
+2025-08-01 22:09:55,416 - asvat
+: this is asraf ahamed
+
+2025-08-01 22:10:00,846 - asvat
+: hoe are you all are fine
+
+2025-08-01 22:10:07,958 - aswin
+: hello rhis is aswin
+
+2025-08-01 22:10:14,282 - asraf
+: hello this i asraf
+
+2025-08-01 22:12:31,050 - aswin
+: hello
+
+2025-08-01 22:12:40,335 - asraf
+: quit
+
+2025-08-01 22:12:43,781 - aswin
+: aswinquit
+
+2025-08-01 22:12:44,978 - aswin
+: quit
+
+2025-08-01 22:15:06,854 - asvat
+: hello
+
+2025-08-01 22:15:12,418 - asvat
+: welcome this is asvat
+
+2025-08-01 22:17:29,308 - INFO - Server started.
+2025-08-01 22:17:38,238 - INFO - asraf connected from ('127.0.0.1', 53672)
+2025-08-01 22:17:38,239 - INFO - \U0001f465 Users Online: asraf
+2025-08-01 22:17:45,930 - INFO - asvat connected from ('127.0.0.1', 53751)
+2025-08-01 22:17:45,931 - INFO - \U0001f465 Users Online: asraf, asvat
+2025-08-01 22:17:56,536 - INFO - aswin connected from ('127.0.0.1', 53868)
+2025-08-01 22:17:56,537 - INFO - \U0001f465 Users Online: asraf, asvat, aswin
+2025-08-01 22:17:59,214 - INFO - aswin: hello
+2025-08-01 22:18:01,738 - INFO - aswin: all ok va
+2025-08-01 22:18:06,352 - INFO - aswin: ellarum epdi erukeega
+2025-08-01 22:18:09,248 - INFO - asvat: hello
+2025-08-01 22:18:14,094 - INFO - asvat: this si asvat
+2025-08-01 22:18:16,874 - INFO - asraf: gello
+2025-08-01 22:18:19,558 - INFO - asraf: this is asraf
+2025-08-01 22:18:23,242 - INFO - asvat: hello
+2025-08-01 22:18:31,829 - INFO - [PM] asvat \u27a4 asraf: this is private msg
+2025-08-01 22:18:43,206 - INFO - Server shutting down.
+2025-08-01 22:18:43,207 - ERROR - Error with ('127.0.0.1', 53672): [WinError 10053] An established connection was aborted by the software in your host machine
+2025-08-01 22:18:43,207 - ERROR - Error with ('127.0.0.1', 53751): [WinError 10053] An established connection was aborted by the software in your host machine
+2025-08-01 22:18:43,208 - ERROR - Error with ('127.0.0.1', 53868): [WinError 10053] An established connection was aborted by the software in your host machine
+2025-08-01 22:18:43,208 - INFO - \U0001f465 Users Online: aswin
+2025-08-01 22:18:43,209 - INFO - \U0001f465 Users Online: 
+2025-08-01 22:18:43,209 - INFO - \U0001f465 Users Online: 
+2025-08-01 22:18:43,210 - INFO - Connection with ('127.0.0.1', 53751) closed.
