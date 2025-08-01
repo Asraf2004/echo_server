@@ -2,41 +2,60 @@ import socket
 import threading
 from datetime import datetime
 from colorama import init, Fore
+import winsound
 
 init(autoreset=True)
 
-def timestamp():
-    return datetime.now().strftime('%H:%M:%S')
+# Message colors
+colors = [Fore.BLUE, Fore.GREEN, Fore.CYAN, Fore.MAGENTA, Fore.YELLOW, Fore.WHITE]
 
-def receive(sock):
+nickname = input("Enter your nickname: ").strip()
+
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client.connect(('localhost', 12345))
+
+# Send nickname immediately
+def send_nickname():
+    client.recv(1024)  # Prompt
+    client.sendall((nickname + '\n').encode())
+
+# Assign consistent color based on nickname hash
+def get_color(nick):
+    return colors[hash(nick) % len(colors)]
+
+# Sound for incoming messages
+def play_beep():
+    winsound.Beep(1000, 150)
+
+# Listen for messages from server
+def receive():
     while True:
         try:
-            msg = sock.recv(1024).decode().strip()
+            msg = client.recv(1024).decode().strip()
             if not msg:
                 break
-            print(Fore.YELLOW + msg)
+
+            if not msg.startswith(f"[{nickname}") and nickname not in msg:
+                play_beep()
+
+            print(msg)
         except:
+            print("❌ Connection closed.")
             break
 
-def start_client():
-    nickname = input("✨ Enter your nickname: ").strip() or "Guest"
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect(('localhost', 5000))
-    sock.sendall((nickname + '\n').encode())
-
-    threading.Thread(target=receive, args=(sock,), daemon=True).start()
-
+# Send messages to server
+def write():
     while True:
-        msg = input(Fore.CYAN + f"{nickname} ➤ " + Fore.RESET)
-        if msg.lower() == "quit":
-            sock.sendall(b'quit\n')
+        msg = input(f"{Fore.LIGHTBLACK_EX}[{datetime.now().strftime('%H:%M:%S')}] {nickname} ➤ {Fore.RESET}")
+        if msg.strip().lower() == "/quit":
+            client.sendall("/quit\n".encode())
             break
-        sock.sendall((msg + '\n').encode())
+        client.sendall((msg + '\n').encode())
 
-    sock.close()
-    print(Fore.RED + "🚪 Disconnected from server")
+send_nickname()
 
-if __name__ == "__main__":
-    import os
-    os.system("")  # Enables ANSI on Windows without chcp
-    start_client()
+recv_thread = threading.Thread(target=receive, daemon=True)
+recv_thread.start()
+
+write()
+client.close()

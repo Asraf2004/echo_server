@@ -1,0 +1,41 @@
+2025-08-01 21:52:38,932 - INFO - Server started.
+2025-08-01 21:53:24,088 - INFO - asraf connected from ('127.0.0.1', 53276)
+2025-08-01 21:53:31,968 - INFO - asvat connected from ('127.0.0.1', 53366)
+2025-08-01 21:53:39,474 - INFO - aswin connected from ('127.0.0.1', 53453)
+2025-08-01 21:53:45,145 - INFO - aswin: hello mama
+2025-08-01 21:53:51,369 - INFO - aswin: enn panreega mama
+2025-08-01 21:53:56,113 - INFO - asraf: hi mapla
+2025-08-01 21:53:58,188 - INFO - asraf: enna pnra
+2025-08-01 21:54:01,250 - INFO - aswin: hello mama
+2025-08-01 21:54:04,865 - INFO - aswin: enna panra
+2025-08-01 21:54:07,305 - INFO - aswin: ennlla eruiya
+2025-08-01 21:54:09,767 - INFO - asvat: hello
+2025-08-01 21:54:13,374 - INFO - asvat: mapta ho are you
+2025-08-01 21:54:16,069 - INFO - asvat: balla erukiya
+2025-08-01 21:54:17,817 - INFO - asvat: apram
+2025-08-01 21:54:20,437 - INFO - asvat: enna panra
+2025-08-01 21:56:28,654 - INFO - Server shutting down.
+2025-08-01 21:56:28,655 - ERROR - Error with ('127.0.0.1', 53276): [WinError 10053] An established connection was aborted by the software in your host machine
+2025-08-01 21:56:28,656 - ERROR - Error with ('127.0.0.1', 53366): [WinError 10053] An established connection was aborted by the software in your host machine
+2025-08-01 21:56:28,656 - INFO - Connection with ('127.0.0.1', 53366) closed.
+2025-08-01 21:56:28,656 - ERROR - Error with ('127.0.0.1', 53453): [WinError 10053] An established connection was aborted by the software in your host machine
+2025-08-01 21:56:28,656 - INFO - Connection with ('127.0.0.1', 53453) closed.
+2025-08-01 21:56:45,109 - INFO - Server started.
+2025-08-01 21:57:08,981 - INFO - asraf connected from ('127.0.0.1', 55872)
+2025-08-01 21:57:08,982 - INFO - \U0001f465 Users Online: asraf
+2025-08-01 21:57:17,887 - INFO - aswin connected from ('127.0.0.1', 55970)
+2025-08-01 21:57:17,888 - INFO - \U0001f465 Users Online: asraf, aswin
+2025-08-01 21:57:28,055 - INFO - asvat connected from ('127.0.0.1', 56081)
+2025-08-01 21:57:28,056 - INFO - \U0001f465 Users Online: asraf, aswin, asvat
+2025-08-01 21:57:33,044 - INFO - asvat: hello
+2025-08-01 21:57:37,438 - INFO - asvat: apram enna mam panreega
+2025-08-01 21:57:43,292 - INFO - asraf: hi mama enna oanra
+2025-08-01 21:57:49,964 - INFO - aswin: hello nalla ergeegala
+2025-08-01 21:57:51,989 - INFO - aswin: ellarum
+2025-08-01 21:57:58,127 - INFO - aswin: apram ellarum namalama
+2025-08-01 21:58:03,284 - INFO - asvat: this isfom aswin
+2025-08-01 21:58:13,788 - INFO - [PM] asvat \u27a4 asraf: this si priate msg
+2025-08-01 21:58:45,388 - INFO - asvat: hello
+2025-08-01 21:58:48,751 - INFO - asvat: aoram enna panreee
+2025-08-01 21:58:51,923 - INFO - asvat: nalla erukya
+2025-08-01 21:59:10,312 - INFO - asvat: user
